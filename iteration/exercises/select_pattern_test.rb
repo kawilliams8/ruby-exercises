@@ -119,14 +119,17 @@ class SelectPatternTest < Minitest::Test
   end
 
   def test_8
-    skip
     meal = {
       appetizer: "chips and salsa",
       entre: "chicken alfredo",
       dessert: "banana pudding"
     }
-    #Your Code Here
-
+    two_words = {}
+    meal.each do |course, food|
+      if food.split.size == 2
+        two_words[course] = food
+      end
+    end
     expected = {
       entre: "chicken alfredo",
       dessert: "banana pudding"
