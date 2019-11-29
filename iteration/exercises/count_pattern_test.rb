@@ -118,9 +118,13 @@ class CountPatternTest < Minitest::Test
   end
 
   def test_9
-    skip
     prices = [1.0, 3.9, 5.99, 18.5, 20.0]
-    # Your code goes here
+    whole_numbers = 0
+    prices.each do |num|
+      if num % 1 == 0
+        whole_numbers += 1
+      end
+    end
 
     assert_equal 2, whole_numbers
   end
