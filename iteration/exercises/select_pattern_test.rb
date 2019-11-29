@@ -87,7 +87,6 @@ class SelectPatternTest < Minitest::Test
   end
 
   def test_6
-    skip
     furniture = {
       dining_room: "dining table",
       bedroom: "bed",
@@ -95,8 +94,11 @@ class SelectPatternTest < Minitest::Test
       patio: "deck chairs"
     }
     words_with_c = {}
-    #Your Code Here
-
+    furniture.each do |room, item|
+      if item.include? "c"
+        words_with_c[room] = item
+      end
+    end
     expected = {
       living_room: "coffee table",
       patio: "deck chairs"
