@@ -36,11 +36,12 @@ class SelectPatternTest < Minitest::Test
   end
 
   def test_3
-    skip
     rainbow = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
     greater_than_four = []
     rainbow.each do |color|
-      #Your Code Here
+      if color.length > 4
+        greater_than_four << color
+      end
     end
 
     assert_equal ["orange", "yellow", "green", "indigo", "violet"], greater_than_four
