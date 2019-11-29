@@ -139,10 +139,13 @@ class SelectPatternTest < Minitest::Test
 
 
   def test_9
-    skip
     prices = [3, 1.4, 3.5, 2, 4.9, 9.1, 8.0]
-    #Your Code Here
-
+    floats = []
+    prices.each do |price|
+      if price.is_a?(Float)
+        floats << price
+      end
+    end
     assert_equal [1.4, 3.5, 4.9, 9.1, 8.0], floats
   end
 
