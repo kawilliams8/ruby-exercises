@@ -90,10 +90,13 @@ class CountPatternTest < Minitest::Test
   end
 
   def test_7
-    skip
     family = ["alice", "bob", "charlie", "david", "eve"]
-    # Your Code Here
-
+    names_with_three_letters = 0
+    family.each do |name|
+      if name.length == 3
+        names_with_three_letters += 1
+      end
+    end
     assert_equal 2, names_with_three_letters
   end
 
