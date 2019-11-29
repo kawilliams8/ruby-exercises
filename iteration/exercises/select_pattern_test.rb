@@ -150,7 +150,6 @@ class SelectPatternTest < Minitest::Test
   end
 
   def test_10
-    skip
     items = {
       tv: 3,
       toaster: 1.4,
@@ -160,8 +159,12 @@ class SelectPatternTest < Minitest::Test
       sack_o_potatoes: 9.1,
       tonka_truck: 8.0
     }
-    #Your Code Here
-
+    floats = {}
+    items.each do |item, num|
+      if num.is_a?(Float)
+        floats[item] = num
+      end
+    end
     expected = {
       toaster: 1.4,
       basketball: 3.5,
