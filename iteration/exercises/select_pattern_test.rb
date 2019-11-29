@@ -76,11 +76,13 @@ class SelectPatternTest < Minitest::Test
 
 
   def test_5
-    skip
     furniture = ["dining table", "bed", "coffee table", "deck chairs"]
     words_with_c = []
-    #Your Code Here
-
+      furniture.each do |item|
+        if item.include? "c"
+          words_with_c << item
+        end
+      end
     assert_equal ["coffee table", "deck chairs"], words_with_c
   end
 
