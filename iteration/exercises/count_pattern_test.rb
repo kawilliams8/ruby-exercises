@@ -36,7 +36,7 @@ class CountPatternTest < Minitest::Test
     older_than_fifty = 0
     ages.each do |age|
       if age > 50
-        older_than_fifty << age
+        older_than_fifty += 1
       end
     end
 
@@ -44,7 +44,6 @@ class CountPatternTest < Minitest::Test
   end
 
   def test_4
-    skip
     ages = {
       abdi: 39,
       hassan: 45,
@@ -54,7 +53,9 @@ class CountPatternTest < Minitest::Test
     }
     older_than_fifty = 0
     ages.each do |name, age|
-      # Your Code Here
+      if age > 50
+        older_than_fifty += 1
+      end
     end
 
     assert_equal 0, older_than_fifty
