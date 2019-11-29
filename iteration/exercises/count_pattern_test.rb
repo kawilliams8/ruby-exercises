@@ -62,11 +62,13 @@ class CountPatternTest < Minitest::Test
   end
 
   def test_5
-    skip
     ages = [39, 45, 29, 24, 50]
     multiple_of_three = 0
-    # Your Code Here
-
+    ages.each do |age|
+      if age % 3 == 0
+        multiple_of_three += 1
+      end
+    end
     assert_equal 3, multiple_of_three
   end
 
