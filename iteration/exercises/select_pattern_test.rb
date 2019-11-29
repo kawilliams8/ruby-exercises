@@ -107,9 +107,13 @@ class SelectPatternTest < Minitest::Test
   end
 
   def test_7
-    skip
     meals = ["chips and salsa", "chicken alfredo", "banana pudding"]
-    #Your Code Here
+    two_words = []
+    meals.each do |food|
+      if food.split.size == 2
+        two_words << food
+      end
+    end
 
     assert_equal ["chicken alfredo", "banana pudding"], two_words
   end
