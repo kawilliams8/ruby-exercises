@@ -48,7 +48,6 @@ class SelectPatternTest < Minitest::Test
   end
 
   def test_4
-    skip
     rainbow = {
       first: "red",
       second: "orange",
@@ -60,7 +59,9 @@ class SelectPatternTest < Minitest::Test
     }
     greater_than_four = {}
     rainbow.each do |position, color|
-      #Your Code Here
+      if color.length > 4
+        greater_than_four[position] = color
+      end
     end
 
     expected = {
