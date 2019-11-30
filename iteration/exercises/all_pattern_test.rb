@@ -70,15 +70,18 @@ class AllPatternTest < Minitest::Test
   end
 
   def test_6
-    skip
     friend_status = {
       "Megan" => :busy,
       "Sarah" => :busy,
       "Duncan" => :busy,
     }
     all_busy = true
-    # Your Code Here
-
+    friend_status.each do |friend, status|
+      if status != :busy
+        all_busy = false
+        break
+      end
+    end
     assert_equal true, all_busy
   end
 
