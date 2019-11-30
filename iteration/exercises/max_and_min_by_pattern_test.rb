@@ -60,10 +60,13 @@ class MaxAndMinByPatternTest < Minitest::Test
   end
 
   def test_5
-    skip
     stats = [3001, 431, 1695, 0.27601, 0.340]
     most_digits = stats[0]
-    # Your Code Here
+    stats.each do |stat|
+      if stat.to_s.length > most_digits.to_s.length
+        most_digits = stat
+      end
+    end
 
     assert_equal 0.27601, most_digits
   end
