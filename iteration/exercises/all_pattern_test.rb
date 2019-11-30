@@ -86,10 +86,14 @@ class AllPatternTest < Minitest::Test
   end
 
   def test_7
-    skip
     zip_codes = [94381, 831, 50009, 36232, 8992, 89999, 11110]
-    # Your Code Here
-
+    all_five_digits = true
+    zip_codes.each do |zip|
+      if zip.to_s.length != 5
+        all_five_digits = false
+        break
+      end
+    end
     assert_equal false, all_five_digits
   end
 
