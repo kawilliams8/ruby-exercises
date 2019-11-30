@@ -28,11 +28,13 @@ class AllPatternTest < Minitest::Test
   end
 
   def test_3
-    skip
     words = ["love", "hate", "fire", "bird", "call"]
     all_four_letters = true
     words.each do |word|
-      # Your Code Here
+      if !word.length != 4
+        all_four_letters = false
+        break
+      end
     end
     assert_equal true, all_four_letters
   end
