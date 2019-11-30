@@ -123,9 +123,13 @@ class MaxAndMinByPatternTest < Minitest::Test
   end
 
   def test_9
-    skip
     programmers = [["katrina", "sandi", "jim", "aaron", "desi"], ["abby", "jon", "susan"]]
-    # Your Code Here
+    fewest_programmers = programmers.first
+    programmers.each do |list|
+      if list.length < fewest_programmers.length
+        fewest_programmers = list
+      end
+    end
 
     assert_equal ["abby", "jon", "susan"], fewest_programmers
   end
