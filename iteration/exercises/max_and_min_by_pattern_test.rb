@@ -42,7 +42,6 @@ class MaxAndMinByPatternTest < Minitest::Test
   end
 
   def test_4
-    skip
     meals = {
       breakfast: "banana",
       snack: "nuts",
@@ -52,7 +51,9 @@ class MaxAndMinByPatternTest < Minitest::Test
     }
     shortest_word = meals[meals.keys.first]
     meals.each do |meal, dish|
-      # Your Code Here
+      if dish.length < shortest_word.length
+        shortest_word = dish
+      end
     end
 
     assert_equal "nuts", shortest_word
