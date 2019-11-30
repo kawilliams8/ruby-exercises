@@ -73,7 +73,6 @@ class MaxAndMinByPatternTest < Minitest::Test
 
 
   def test_6
-    skip
     stats = {
       games_played: 3001,
       home_runs: 431,
@@ -82,7 +81,11 @@ class MaxAndMinByPatternTest < Minitest::Test
       on_base_percentage: 0.340
     }
     most_digits = stats[stats.keys.first]
-    # Your Code Here
+    stats.each do |key, num|
+      if num.to_s.length > most_digits.to_s.length
+        most_digits = num
+      end
+    end
 
     assert_equal 0.27601, most_digits
   end
