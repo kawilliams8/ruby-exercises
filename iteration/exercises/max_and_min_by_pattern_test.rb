@@ -135,10 +135,13 @@ class MaxAndMinByPatternTest < Minitest::Test
   end
 
   def test_10
-    skip
     programmers = {ruby: ["katrina", "sandi", "jim", "aaron", "desi"], java: ["abby", "jon", "susan"]}
-    # Your Code Here
-
+    fewest_programmers = programmers.keys.first
+    programmers.each do |lang, team|
+      if team.length < fewest_programmers.length
+        fewest_programmers = lang
+    end
+  end
     assert_equal :java, fewest_programmers
   end
 end
