@@ -118,9 +118,14 @@ class AllPatternTest < Minitest::Test
   end
 
   def test_9
-    skip
     snacks = ["GARLIC PLANTAINS", "SNICKERDOODLES", "Pretzels"]
-    # Your Code Here
+    all_caps = true
+    snacks.each do |snack|
+      if snack.upcase != snack
+        all_caps = false
+        break
+      end
+    end
 
     assert_equal false, all_caps
   end
