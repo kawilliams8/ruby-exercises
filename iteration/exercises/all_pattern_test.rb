@@ -58,11 +58,14 @@ class AllPatternTest < Minitest::Test
   end
 
   def test_5
-    skip
     statuses = [:busy, :busy, :busy]
     all_busy = true
-    # Your Code Here
-
+    statuses.each do |status|
+      if status != :busy
+        all_busy = false
+        break
+      end
+    end
     assert_equal true, all_busy
   end
 
