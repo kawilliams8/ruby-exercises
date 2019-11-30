@@ -91,9 +91,13 @@ class MaxAndMinByPatternTest < Minitest::Test
   end
 
   def test_7
-    skip
     ages = [39, 45, 29, 24, 50]
-    # Your Code Here
+    oldest = ages.first
+    ages.each do |num|
+      if num > oldest
+        oldest = num
+      end
+    end
 
     assert_equal 50, oldest
   end
