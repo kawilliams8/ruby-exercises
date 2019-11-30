@@ -103,7 +103,6 @@ class MaxAndMinByPatternTest < Minitest::Test
   end
 
   def test_8
-    skip
     ages = {
       abdi: 39,
       hassan: 45,
@@ -111,7 +110,13 @@ class MaxAndMinByPatternTest < Minitest::Test
       margaret: 24,
       miguel: 50
     }
-    # Your Code Here
+    oldest = {name: ages.keys.first, age: ages.values.first}
+    ages.each do |name, age|
+      if age > oldest[:age]
+        oldest[:name] = name.to_s
+        oldest[:age] = age
+      end
+    end
 
     expected = {name: "miguel", age: 50}
     assert_equal expected, oldest
