@@ -98,7 +98,6 @@ class AllPatternTest < Minitest::Test
   end
 
   def test_8
-    skip
     zip_codes = {
       "Megan" => 94381,
       "Sarah" => 831,
@@ -108,8 +107,13 @@ class AllPatternTest < Minitest::Test
       "Cameron" => 89999,
       "Joshua" => 11110
     }
-    # Your Code Here
-
+    all_five_digits = true
+    zip_codes.each do |name, zip|
+      if zip.to_s.length != 5
+        all_five_digits = false
+        break
+      end
+    end
     assert_equal false, all_five_digits
   end
 
