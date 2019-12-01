@@ -80,7 +80,6 @@ class InjectPatternTest < Minitest::Test
   end
 
   def test_6
-    skip
     topping_calories = {
       pepperoni: 430,
       sausage: 400,
@@ -92,7 +91,9 @@ class InjectPatternTest < Minitest::Test
     # to create an array of all the toppings
 
     toppings = []
-    # Your Code Here
+    topping_calories.each do |food, cals|
+      toppings << food.to_s
+    end
 
     assert_equal ["pepperoni", "sausage", "olives", "peppers", "onions"], toppings
   end
