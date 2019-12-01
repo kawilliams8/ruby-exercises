@@ -106,13 +106,10 @@ class InjectPatternTest < Minitest::Test
     elements.each do |arr|
       sum_of_second_values += arr[1]
     end
-
     assert_equal 31, sum_of_second_values
-
   end
 
   def test_8
-    skip
     toppings = {
       pepperoni: {
         calories: 430,
@@ -138,8 +135,10 @@ class InjectPatternTest < Minitest::Test
     # Iterate over the toppings array defined above to find
     # total calories. You will need to multiply each topping's
     # calorie count by the quantity
-
-    # Your Code Here
+    total_calories = 0
+    toppings.each do |food, details|
+      total_calories += details.values.first * details.values[1]
+    end
 
     assert_equal 6950, total_calories
   end
