@@ -99,12 +99,13 @@ class InjectPatternTest < Minitest::Test
   end
 
   def test_7
-    skip
     elements = [["a", 1], ["b", 9], ["c", 21]]
     # Iterate over the elements array defined above
     # to find the sum of all the integers
-
-    # Your Code Here
+    sum_of_second_values = 0
+    elements.each do |arr|
+      sum_of_second_values += arr[1]
+    end
 
     assert_equal 31, sum_of_second_values
 
