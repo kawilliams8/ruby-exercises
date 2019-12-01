@@ -60,14 +60,15 @@ class InjectPatternTest < Minitest::Test
   end
 
   def test_5
-    skip
     airlines = ["Southwest", "Delta", "United", "Frontier"]
     # Iterate over the airlines array defined above to
     # create a hash with the name of the airline as the
     # key and the length of the name as the value
 
     number_of_letters = {}
-    # Your Code Here
+    airlines.each do |brand|
+      number_of_letters[brand] = brand.length
+    end
 
     expected = {
       "Southwest" => 9,
