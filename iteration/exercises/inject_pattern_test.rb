@@ -38,13 +38,12 @@ class InjectPatternTest < Minitest::Test
 
     product = 1
     numbers.each do |number|
-      product = product * number
+      product *= number
     end
     assert_equal 210, product
   end
 
   def test_4
-    skip
     scrabble_score = {
       letter_total: 23,
       word_muliplier: 3,
@@ -55,7 +54,7 @@ class InjectPatternTest < Minitest::Test
 
     product = 1
     scrabble_score.each do |(key, value)|
-      # Your Code Here
+      product *= value
     end
     assert_equal 138, product
   end
