@@ -144,7 +144,6 @@ class InjectPatternTest < Minitest::Test
   end
 
   def test_9
-    skip
     grades = {
       quizzes: [8, 5, 3, 6, 5],
       tests: [23, 21, 24],
@@ -156,8 +155,11 @@ class InjectPatternTest < Minitest::Test
     # calculated by averaging each category together and
     # summing all of the averages
 
-    # Your code goes here
-
+    final_grade = 0
+    grades.each do |type, arr|
+      puts arr.inject(0) { |sum, el| sum + el} / arr.length
+      final_grade += arr.inject(0) { |sum, el| sum + el }.to_f / arr.length
+    end
     assert_equal 85.40, final_grade
   end
 
