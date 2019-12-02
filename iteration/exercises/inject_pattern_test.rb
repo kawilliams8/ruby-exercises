@@ -157,14 +157,12 @@ class InjectPatternTest < Minitest::Test
 
     final_grade = 0
     grades.each do |type, arr|
-      puts arr.inject(0) { |sum, el| sum + el} / arr.length
       final_grade += arr.inject(0) { |sum, el| sum + el }.to_f / arr.length
     end
     assert_equal 85.40, final_grade
   end
 
   def test_10
-    skip
     menu = {
       empanadas: {
         flavors: ["chicken", "potato", "steak", "veggie"],
@@ -179,17 +177,23 @@ class InjectPatternTest < Minitest::Test
         gluten_free: true
       }
     }
-
+    printable_menu = "Menu:\n"\
     # Iterate over the menu hash above to create a printable
     # version of the menu
-
-    # Your Code Here
-
+    
+    menu.each do |food, details|
+      ingredients_list = "- "
+      for ingred in details.values.first.reverse.drop(1).reverse do
+        ingredients_list += "#{ingred}, "
+      end
+      last = details.values.first.last
+      gluten_status = details.values[1] ? "(gluten free)" : "(non gluten free)"
+      printable_menu += "#{ingredients_list}and #{last} #{food} #{gluten_status}\n"\
+    end
     expected =  "Menu:\n"\
                 "- chicken, potato, steak, and veggie empanadas (non gluten free)\n"\
                 "- blueberry, and vanilla scones (non gluten free)\n"\
                 "- blueberry, strawberry, and cherry parfaits (gluten free)\n"
-
     assert_equal expected, printable_menu
   end
 end
