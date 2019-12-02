@@ -49,11 +49,10 @@ class IntsAndFloatsTests < Minitest::Test
   end
 
   def test_6
-    skip
     lucky = 7
     # Using the variable defined above,
     # find out if the lucky number is even
-    even = _________
+    even = lucky.even?
     assert_equal false, even
   end
 
