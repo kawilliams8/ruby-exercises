@@ -56,9 +56,12 @@ class GroupByPatternTest < Minitest::Test
   end
 
   def test_group_by_number_of_zeros
-    skip
     numbers = [1, 3, 500, 200, 4000, 3000, 10000, 90, 20, 500000]
-    # Your code goes here
+    grouped = Hash.new {|hash, key| hash[key] = []}
+    numbers.each do |num|
+      zeroes = num.to_s.split("").count('0')
+      grouped[zeroes] << num
+    end
     expected = {0=>[1, 3], 2=>[500, 200], 3=>[4000, 3000], 4=>[10000], 1=>[90, 20], 5=>[500000]}
     assert_equal expected, grouped
   end
