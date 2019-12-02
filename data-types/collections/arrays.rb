@@ -9,9 +9,8 @@ class ArraysTest < Minitest::Test
   end
 
   def test_1
-    skip
     # In the line below, create and array with the numbers 1 - 5
-    nums = ______
+    nums = Array.new(5) {|i| i + 1 }
     assert_equal [1,2,3,4,5], nums
   end
 
