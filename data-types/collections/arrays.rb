@@ -3,9 +3,8 @@ require 'minitest/pride'
 
 class ArraysTest < Minitest::Test
   def test_0
-    skip
     # In the line below, create a new empty array
-    empty = ______
+    empty = Array.new
     assert_equal [], empty
   end
 
