@@ -67,9 +67,12 @@ class GroupByPatternTest < Minitest::Test
   end
 
   def test_group_by_order_of_magnitude
-    skip
     numbers = [1, 3, 503, 239, 4938, 3932, 19982, 93, 21, 501787]
-    # Your code goes here
+    grouped = Hash.new {|hash, key| hash[key] = []}
+    numbers.each do |num|
+      chars = num.to_s.length
+      grouped[chars] << num
+    end
     expected = {1=>[1, 3], 2=>[93, 21], 3=>[503, 239], 4=>[4938, 3932], 5=>[19982], 6=>[501787]}
     assert_equal expected, grouped
   end
