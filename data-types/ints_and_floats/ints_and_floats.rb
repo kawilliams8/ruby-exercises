@@ -57,11 +57,10 @@ class IntsAndFloatsTests < Minitest::Test
   end
 
   def test_7
-    skip
     pi = 3.14
     # Using the variable defined above,
     # round the number to the nearest whole number
-    rounded = _________
+    rounded = pi.round
     assert_equal 3, rounded
   end
 
