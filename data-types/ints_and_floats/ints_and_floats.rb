@@ -31,22 +31,20 @@ class IntsAndFloatsTests < Minitest::Test
   end
 
   def test_4
-    skip
     lucky = 7
     unlucky = 13
     # Using the two variables defined above,
     # divide unlucky by lucky
-    quotient = ________
+    quotient = unlucky / lucky.to_f
     assert_equal 1.8571428571428572, quotient
   end
 
   def test_5
-    skip
     lucky = 7
     unlucky = 13
     # Using the two variables defined above,
     # find the remainder of the unlucky divided by the lucky
-    remainder = ____________
+    remainder = unlucky % lucky
     assert_equal 6, remainder
   end
 
@@ -76,8 +74,6 @@ class IntsAndFloatsTests < Minitest::Test
     rounded = _________
     assert_equal 3.1, rounded
   end
-
-
 
   def test_9
     skip
