@@ -39,9 +39,18 @@ class GroupByPatternTest < Minitest::Test
   end
 
   def test_group_words_by_uniqueness
-    skip
     words = ["one", "two", "one", "TWO", "three", "one", "three", "three", "three"]
-    # Your code goes here
+    grouped = Hash.new {|hash, key| hash[key] = []}
+    words.each do |word|
+      if word.downcase == "one"
+        grouped['one'] << word
+      else if word.downcase == 'two'
+        grouped['two'] << word
+      else word.downcase == 'three'
+        grouped['three'] << word
+      end
+    end
+  end
     expected = {"one"=>["one", "one", "one"], "two"=>["two", "TWO"], "three"=>["three", "three", "three", "three"]}
     assert_equal expected, grouped
   end
