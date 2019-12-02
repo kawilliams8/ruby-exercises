@@ -29,10 +29,11 @@ class GroupByPatternTest < Minitest::Test
   end
 
   def test_group_words_by_first_letter
-    skip
     words = ["ant", "axis", "albatross", "bolt", "badge", "butter", "car", "cdr", "column"]
     words_by_first_letter = Hash.new {|hash, key| hash[key] = []}
-    # Your code goes here
+    words.each do |word|
+      words_by_first_letter[word.chr] << word
+    end
     expected = {"a"=>["ant", "axis", "albatross"], "b"=>["bolt", "badge", "butter"], "c"=>["car", "cdr", "column"]}
     assert_equal expected, words_by_first_letter
   end
