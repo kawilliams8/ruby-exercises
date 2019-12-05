@@ -6,10 +6,6 @@ class Unicorn
   end
 
   def white?
-    if @color == 'white'
-      true
-    else
-      false
-    end
+    return @color == 'white' ? true : false
   end
 end
