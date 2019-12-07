@@ -73,25 +73,36 @@ class WerewolfTest < Minitest::Test
   def test_consumes_a_victim
     # your code here
     werewolf = Werewolf.new("David","London")
-    victim = Victim.new()
+    victim = Victim.new
     werewolf.change!
     werewolf.consume(victim)
     assert :dead, victim.status
   end
   
   def test_cannot_consume_victim_if_in_human_form
-    skip
     # your code here
+    werewolf = Werewolf.new("David","London")
+    victim = Victim.new
+    werewolf.consume(victim)
+    assert :alive, victim.status
   end
 
   def test_a_werewolf_who_has_consumed_a_victim_is_no_longer_hungry
-    skip
     # your code here
+    werewolf = Werewolf.new("David","London")
+    victim = Victim.new
+    werewolf.consume(victim)
+    assert :dead, victim.status
+    refute werewolf.hungry?
   end
 
   def test_a_werewolf_who_has_consumed_a_victim_makes_the_victim_dead
-    skip
     # your code here
+    werewolf = Werewolf.new("David","London")
+    victim = Victim.new
+    werewolf.change!
+    werewolf.consume(victim)
+    assert :dead, victim.status
   end
 
 end
