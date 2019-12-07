@@ -30,21 +30,22 @@ class WizardTest < Minitest::Test
   end
 
   def test_has_lots_of_root_powers
-    skip
     wizard = Wizard.new("Rob", bearded: false)
     assert_equal "sudo rm -rf /home/mirandax", wizard.incantation("rm -rf /home/mirandax")
   end
 
   def test_starts_rested
-    skip
     # create wizard
     # .rested? returns true
+    wizard = Wizard.new("Rob", bearded: false)
+    assert wizard.rested?
   end
 
   def test_can_cast_spells
-    skip
     # create wizard
     # .cast returns "MAGIC MISSILE!"
+    wizard = Wizard.new("Rob", bearded: false)
+    assert 'MAGIC MISSILE!', wizard.cast
   end
 
   def test_gets_tired_after_casting_three_spells
