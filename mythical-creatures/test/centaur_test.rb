@@ -10,7 +10,6 @@ class CentaurTest < Minitest::Test
   end
 
   def test_it_has_a_horse_breed
-    skip
     centaur = Centaur.new("George","Palomino")
     assert_equal "Palomino", centaur.breed
   end
