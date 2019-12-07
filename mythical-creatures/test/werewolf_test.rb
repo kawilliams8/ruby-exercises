@@ -71,8 +71,12 @@ class WerewolfTest < Minitest::Test
   end
 
   def test_consumes_a_victim
-    skip
     # your code here
+    werewolf = Werewolf.new("David","London")
+    victim = Victim.new()
+    werewolf.change!
+    werewolf.consume(victim)
+    assert :dead, victim.status
   end
   
   def test_cannot_consume_victim_if_in_human_form

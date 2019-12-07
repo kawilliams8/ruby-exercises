@@ -25,4 +25,8 @@ class Werewolf
   def hungry?
     @hungry
   end
+
+  def consume(victim)
+    victim.status = :dead
+  end
 end
