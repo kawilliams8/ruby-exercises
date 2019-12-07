@@ -6,6 +6,7 @@ class Medusa
   end
 
   def stare(victim)
+    victim.stoned = !victim.stoned
     @statues << victim
   end
 end
