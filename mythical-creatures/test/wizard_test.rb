@@ -49,12 +49,17 @@ class WizardTest < Minitest::Test
   end
 
   def test_gets_tired_after_casting_three_spells
-    skip
     # create wizard
     # casts spell twice
     # check wizard is rested
     # casts spell
     # check wizard is not rested
+    wizard = Wizard.new("Rob", bearded: false)
+    wizard.cast
+    wizard.cast
+    assert wizard.rested?
+    wizard.cast
+    refute wizard.rested?
   end
 
 end
