@@ -7,6 +7,13 @@ class Medusa
 
   def stare(victim)
     victim.stoned = !victim.stoned
-    @statues << victim
+    if @statues.length < 3
+      @statues << victim
+    else 
+      @statues[0].stoned = false
+      @statues.shift
+      @statues << victim
+    end
   end
+
 end
