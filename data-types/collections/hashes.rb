@@ -80,7 +80,6 @@ class HashesTest < Minitest::Test
   end
 
   def test_8
-    skip
     books = {
       "John Steinbeck" => "Grapes of Wrath",
       "Harper Lee" => "To Kill a Mockingbird"
@@ -88,7 +87,7 @@ class HashesTest < Minitest::Test
     # Using the books hash defined above,
     # change the value associated with
     # "John Steinbeck" to "Of Mice and Men"
-    ______
+    books['John Steinbeck'] = 'Of Mice and Men'
     expected = {
       "John Steinbeck" => "Of Mice and Men",
       "Harper Lee" => "To Kill a Mockingbird"
@@ -97,14 +96,13 @@ class HashesTest < Minitest::Test
   end
 
   def test_9
-    skip
     books = {
       "John Steinbeck" => "Grapes of Wrath",
       "Harper Lee" => "To Kill a Mockingbird"
     }
     # Using the books hash defined above,
     # delete the key "Harper Lee"
-    ______
+    books.delete('Harper Lee')
     expected = {
       "John Steinbeck" => "Grapes of Wrath"
     }
