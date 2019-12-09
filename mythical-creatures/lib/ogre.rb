@@ -21,4 +21,8 @@ class Ogre
       human.knocked_out = true
     end
   end
+
+  def apologize(human)
+    human.knocked_out = false
+  end
 end
