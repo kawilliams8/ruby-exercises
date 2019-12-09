@@ -62,8 +62,6 @@ class DirewolfTest < Minitest::Test
   end
 
   def test_can_only_protect_stark_kids_if_home_and_location_match
-    skip
-
     wolf = Direwolf.new('Ghost')
     stark = Stark.new('John', "King's Landing")
 
@@ -74,7 +72,6 @@ class DirewolfTest < Minitest::Test
   end
 
   def test_direwolf_can_only_protect_two_starks_at_a_time
-    skip
 
     summer_wolf = Direwolf.new('Summer', "Winterfell")
     lady_wolf = Direwolf.new('Lady', "Winterfell")
@@ -98,8 +95,6 @@ class DirewolfTest < Minitest::Test
   end
 
   def test_starks_start_off_unsafe
-    skip
-
     stark = Stark.new('John', "The Wall")
 
     refute stark.safe?
@@ -122,8 +117,6 @@ class DirewolfTest < Minitest::Test
   end
 
   def test_hunts_white_walkers
-    skip
-
     wolf = Direwolf.new('Nymeria', "Winterfell")
 
     assert wolf.hunts_white_walkers?

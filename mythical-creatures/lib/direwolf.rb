@@ -9,6 +9,8 @@ class Direwolf
   end
 
   def protects(stark)
-    @starks_to_protect << stark
+    if stark.location == @home && @starks_to_protect.length < 2
+      @starks_to_protect << stark
+    end
   end
 end
