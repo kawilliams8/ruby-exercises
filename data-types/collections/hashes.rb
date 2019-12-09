@@ -43,10 +43,9 @@ class HashesTest < Minitest::Test
   end
 
   def test_5
-    skip
     # In the line below, create a new hash with
     # a default value of zero
-    ingredients = ______
+    ingredients = Hash.new(0)
     assert_equal 0, ingredients["tomatoes"]
     assert_equal 0, ingredients[:carrots]
   end
