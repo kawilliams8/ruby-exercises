@@ -181,7 +181,6 @@ class HashesTest < Minitest::Test
   end
 
   def test_15
-    skip
     ages = {
       Jimmy: 4,
       Julio: 8,
@@ -189,7 +188,7 @@ class HashesTest < Minitest::Test
     }
     # Using the ages hash defined above
     # increment Julio's age by one
-    ______
+    ages[:Julio] += 1
     assert_equal 9, ages[:Julio]
   end
 
