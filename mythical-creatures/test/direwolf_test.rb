@@ -102,8 +102,6 @@ class DirewolfTest < Minitest::Test
   end
 
   def test_protected_status_changes_once_protected
-    skip
-
     wolf = Direwolf.new('Nymeria', "Winterfell")
     arya_stark = Stark.new('Arya')
     sansa_stark = Stark.new('Sansa')
@@ -123,8 +121,6 @@ class DirewolfTest < Minitest::Test
   end
 
   def test_hunts_white_walkers_but_not_if_protecting_starks
-    skip
-
     wolf = Direwolf.new('Nymeria', "Winterfell")
     stark = Stark.new('Sansa')
 
@@ -133,8 +129,6 @@ class DirewolfTest < Minitest::Test
   end
 
   def test_wolves_can_leave_and_stop_protecting_starks
-    skip
-
     summer_wolf = Direwolf.new('Summer', "Winterfell")
     lady_wolf = Direwolf.new('Lady', "Winterfell")
     sansa_stark = Stark.new('Sansa')
@@ -144,7 +138,6 @@ class DirewolfTest < Minitest::Test
     lady_wolf.protects(sansa_stark)
     summer_wolf.leaves(arya_stark)
 
-
     assert_equal [],  summer_wolf.starks_to_protect
     assert_equal 'Sansa', lady_wolf.starks_to_protect[0].name
     assert_instance_of Array, lady_wolf.starks_to_protect
@@ -152,8 +145,6 @@ class DirewolfTest < Minitest::Test
   end
 
   def test_if_stark_not_protected_when_direwolf_leaves_then_that_stark_is_the_return_value
-    skip
-
     summer_wolf = Direwolf.new('Summer', "Winterfell")
     lady_wolf = Direwolf.new('Lady', "Winterfell")
     sansa_stark = Stark.new('Sansa')

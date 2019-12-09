@@ -1,5 +1,6 @@
 class Stark
-  attr_reader :name, :location, :safe
+  attr_reader :name, :location
+  attr_accessor :safe
   def initialize(name, location = "Winterfell", safe = false)
     @name = name
     @location = location
