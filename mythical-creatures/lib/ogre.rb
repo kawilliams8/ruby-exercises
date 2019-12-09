@@ -17,5 +17,8 @@ class Ogre
 
   def swing_at(human)
     @swings += 1
+    if @swings % 2 == 0
+      human.knocked_out = true
+    end
   end
 end
