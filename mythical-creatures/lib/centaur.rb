@@ -6,6 +6,7 @@ class Centaur
     @cranky_counter = 0
     @standing = true
     @laying = false
+    @rested = false
   end
 
   def shoot
@@ -61,5 +62,9 @@ class Centaur
 
   def laying?
     @laying
+  end
+
+  def rested?
+    @rested
   end
 end
