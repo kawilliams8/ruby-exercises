@@ -229,7 +229,6 @@ class HashesTest < Minitest::Test
   end
 
   def test_19
-    skip
     ages = {
       Jimmy: 4,
       Julio: 8,
@@ -237,12 +236,12 @@ class HashesTest < Minitest::Test
     }
     # Call a method on the ages hash defined above
     # to figure out if :Jimmy is a key
-    jimmy_in_hash = ______
+    jimmy_in_hash = ages.include?(:Jimmy)
     assert_equal true, jimmy_in_hash
 
     # Now figure out if :Jackie is in the hash
 
-    jackie_in_hash = ______
+    jackie_in_hash = ages.include?(:Jackie)
     assert_equal false, jackie_in_hash
   end
 
