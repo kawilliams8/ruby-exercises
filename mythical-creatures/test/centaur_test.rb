@@ -115,18 +115,25 @@ class CentaurTest < Minitest::Test
   def test_becomes_rested_after_drinking_a_potion
     # your code here
     centaur = Centaur.new("George","Palomino")
+    centaur.stand_up
     centaur.drink
-    assert true, center.rested?
+    assert centaur.rested?
   end
 
   def test_can_only_drink_potion_while_standing
-    skip
     # your code here
+    centaur = Centaur.new("George","Palomino")
+    centaur.drink
+    assert true, centaur.rested?
   end
 
   def test_gets_sick_if_drinks_potion_while_rested
-    skip
     # your code here
+    centaur = Centaur.new("George","Palomino")
+    centaur.stand_up
+    centaur.drink
+    centaur.drink
+    assert centaur.sick?
   end
 
 end
