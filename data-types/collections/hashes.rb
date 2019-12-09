@@ -217,7 +217,6 @@ class HashesTest < Minitest::Test
   end
 
   def test_18
-    skip
     ages = {
       Jimmy: 4,
       Julio: 8,
@@ -225,7 +224,7 @@ class HashesTest < Minitest::Test
     }
     # Using the ages hash defined above
     # find the number of key/value pairs
-    num_pairs = ______
+    num_pairs = ages.length
     assert_equal 3, num_pairs
   end
 
