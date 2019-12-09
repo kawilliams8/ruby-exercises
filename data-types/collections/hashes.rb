@@ -193,7 +193,6 @@ class HashesTest < Minitest::Test
   end
 
   def test_16
-    skip
     ages = {
       Jimmy: 4,
       Julio: 8,
@@ -201,7 +200,7 @@ class HashesTest < Minitest::Test
     }
     # Using the ages hash defined above
     # get an array of all the names
-    names = ______
+    names = ages.keys
     assert_equal [:Jimmy, :Julio, :Juliet], names
   end
 
