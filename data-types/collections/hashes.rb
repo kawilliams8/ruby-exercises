@@ -62,7 +62,6 @@ class HashesTest < Minitest::Test
   end
 
   def test_7
-    skip
     books = {
       "John Steinbeck" => "Grapes of Wrath",
       "Harper Lee" => "To Kill a Mockingbird"
@@ -71,7 +70,7 @@ class HashesTest < Minitest::Test
     # add a new key of "Ernest Hemmingway"
     # with a value of "For Whom the Bell Tolls"
     # in the line below
-    ______
+    books["Ernest Hemmingway"] = 'For Whom the Bell Tolls'
     expected = {
       "John Steinbeck" => "Grapes of Wrath",
       "Harper Lee" => "To Kill a Mockingbird",
