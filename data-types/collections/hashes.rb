@@ -110,14 +110,13 @@ class HashesTest < Minitest::Test
   end
 
   def test_10
-    skip
     books = {
       John_Steinbeck: "Grapes of Wrath",
       Harper_Lee: "To Kill a Mockingbird"
     }
     # Using the books hash defined above,
     # access the value "Grapes of Wrath"  in the line below
-    grapes = ______
+    grapes = books[:John_Steinbeck]
     assert_equal "Grapes of Wrath", grapes
   end
 
