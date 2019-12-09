@@ -28,7 +28,6 @@ class OgreTest < Minitest::Test
   end
 
   def test_humans_only_notices_ogre_every_third_encounter
-    skip
     ogre = Ogre.new('Brak')
     human = Human.new
 
@@ -41,7 +40,6 @@ class OgreTest < Minitest::Test
   end
 
   def test_human_notices_ogre_the_sixth_time
-    skip
     ogre = Ogre.new('Brak')
     human = Human.new
 
@@ -53,7 +51,6 @@ class OgreTest < Minitest::Test
   end
 
   def test_it_can_swing_a_club
-    skip
     ogre = Ogre.new('Brak')
     human = Human.new
     ogre.swing_at(human)
@@ -61,7 +58,6 @@ class OgreTest < Minitest::Test
   end
 
   def test_it_swings_the_club_when_the_human_notices_it
-    skip
     ogre = Ogre.new('Brak')
     human = Human.new
     ogre.encounter(human)
