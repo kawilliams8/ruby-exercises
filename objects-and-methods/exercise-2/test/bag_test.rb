@@ -31,14 +31,12 @@ class BagTest < Minitest::Test
   end
 
   def test_bag_counts_candies
-    skip
     bag = Bag.new
     bag << Candy.new("Caramelized Almonds")
     assert_equal 1, bag.count
   end
 
   def test_bag_contains_candies_and_candies_have_a_type
-    skip
     bag = Bag.new
     bag << Candy.new("Hershey's Kisses")
     # You usually don't want to chain a bunch of different
@@ -50,7 +48,6 @@ class BagTest < Minitest::Test
   end
 
   def test_ask_bag_if_it_contains_a_particular_type_of_candy
-    skip
     bag = Bag.new
     bag << Candy.new("Lindt chocolate")
 
@@ -59,7 +56,6 @@ class BagTest < Minitest::Test
   end
 
   def test_get_a_particular_type_of_candy
-    skip
     bag = Bag.new
     bag << Candy.new("Jawbreaker")
     bag << Candy.new("Jawbreaker")
@@ -70,7 +66,6 @@ class BagTest < Minitest::Test
   end
 
   def test_grabbing_candy_removes_it_from_the_bag
-    skip
     bag = Bag.new
     bag << Candy.new("Reese's Pieces")
     bag << Candy.new("Junior Mints")

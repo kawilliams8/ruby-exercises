@@ -19,4 +19,23 @@ class Bag
   def << candy
     @candies << candy
   end
+
+  def contains?(candy_type)
+    @candies.any? do |candy|
+      if candy.type == candy_type
+        true
+      else
+        false
+      end
+    end
+  end
+
+  def grab candy_name
+    @candies.each do |candy|
+      if candy.type == candy_name
+        grabbed_candy = @candies.delete candy
+        return grabbed_candy
+      end
+    end
+  end
 end
