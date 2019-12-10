@@ -38,4 +38,17 @@ class Bag
       end
     end
   end
+
+  def take(num)
+    i = 0
+    taken = []
+    loop do
+      i += 1
+        taken << @candies.pop
+      if i == num
+        break
+      end
+    end
+    return taken
+  end
 end
